@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>www.iblog.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32x32.png">
+
+    <!-- external css -->
+    <style>
+        /* hover style of dropdown nav item */
+        .dropdown-item:hover {
+            background-color: rgb(35, 114, 193);
+        }
+
+        /* font family & font size of nav logo` */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
+        .navbar-brand {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 24px;
+        }
+
+        /* font family of nav list */
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap');
+
+        .nav-item {
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+
+        /* imagage size of carousal */
+        .d-block {
+            width: 1400px;
+            height: 507px;
+        }
+
+        /* container 1 box image transition */
+        .col-10 {
+            transition: all 0.4s linear;
+        }
+
+        .col-10:hover {
+            transform: scale(1.04);
+        }
+
+        /* flex direction of container 4 */
+        /* .direction {
+            flex-direction: row-reverse;
+        } */
+
+
+        /* container 2 box image transition */
+        .card-cover {
+            transition: all 0.3s linear;
+        }
+
+        .card-cover:hover {
+            transform: translateY(15px);
+        }
+
+        /* container 3 box transition */
+        .h-100 {
+            transition: all 1s ease-in-out;
+        }
+
+        .h-100:hover {
+            transform: scale(1.09);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="#"><img src="/logo.png" alt="logo" width="80" height="40"></a> -->
+            <a class="navbar-brand" href="/index.html"><em>&#8226; iblog</em></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/catagories.html">Catagories</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/contact.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            ContactUs
+                        </a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-light" href="/contact.html">Write for us</a></li>
+                            <li><a class="dropdown-item text-light" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">LogIn</a></li>
+                            <li><a class="dropdown-item text-light" data-bs-toggle="modal" data-bs-target="#signupModal" href="#">SignUp</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- login modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login to your account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- modal body form -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary my-2">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Signup modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Get your account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- modal body form -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm your Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary my-2">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <!-- carousel 1 -->
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="/Images/Home/img1.jpg" class="d-block w-100" alt="tablet image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Welcome To The iblog</h1>
+                    <h5>If you want to continually grow your blog, you need to learn to blog on a consistent basis
+                    </h5>
+                    <a href="#custom-cards"><button type="button" class="btn btn-success">More about us</button></a>
+                    <a href="/blog.html"><button type="button" class="btn btn-danger">Read Blogs</button></a>
+                </div>
+            </div>
+            <!-- carousel 2 -->
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="/Images/Home/img2.jpg" class="d-block w-100" alt="code image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Explore the virtual world</h1>
+                    <h5>Blogging is a communications mechanism handed to us by the long tail of the Internet with the
+                        wide network
+                    </h5>
+                    <a href="#custom-cards"><button type="button" class="btn btn-success">More about us</button></a>
+                    <a href="/blog.html"><button type="button" class="btn btn-danger">Read Blogs</button></a>
+                </div>
+            </div>
+            <!-- carousel 3 -->
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="/Images/Home/img3.jpg" class="d-block w-100" alt="laptop images">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Digital Core Capabilities</h1>
+                    <h5>We bring you powerful advantages to navigate your digital transformation</h5>
+                    <a href="#custom-cards"><button type="button" class="btn btn-success">More about us</button></a>
+                    <a href="/blog.html"><button type="button" class="btn btn-danger">Read Blogs</button></a>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- container 1 -->
+    <div class="container col-xxl-8 px-4">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="/Images/Home/multi.png" class="d-block mx-lg-auto img-fluid" alt="multi Themes" width="700"
+                    height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">What Your Music Preference Says About You and Your Personality
+                </h1>
+                <p class="lead">In the study, researchers found that people who were empathizers were also more likely
+                    to enjoy mellow but emotionally-rich contemporary music, which ranged from indie-rock to country to
+                    folk. The systemizers, however, were more likely to prefer complex, intense, energetic music that
+                    was upbeat and positive.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="/catagories.html"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Find
+                            out more</button></a>
+                    <a href="#write"><button type="button"
+                            class="btn btn-outline-secondary btn-lg px-4">Write</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container 2 cards -->
+    <div class="container px-4" id="custom-cards">
+        <h2 class="pb-2 border-bottom">More of us</h2>
+
+        <!-- card1 -->
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('/Images/Home/music-dark.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-3 pb-3 mt-5 mb-4 display-6 lh-1 fw-bold">Where world fail, music speaks</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="/Images/Home/music-dark.jpg" alt="music" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Music</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <small>3d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- card2 -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('/Images/Home/technology-dark.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-3 pb-3 mt-5 mb-4 display-6 lh-1 fw-bold">Technology is best when it brings people
+                            together
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="/Images/Home/technology-dark.jpg" alt="technology" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Technology</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <small>4d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- card3 -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('/Images/Home/innovation-dark.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-3 pb-3 mt-5 mb-4 display-6 lh-1 fw-bold">Ability to use technology to navigate &
+                            evaluate</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="/Images/Home/innovation-dark.jpg" alt="innovation" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Innovation</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <small>5d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container 3 -->
+    <div class="row align-items-md-stretch">
+
+        <!-- about me -->
+        <div class="col-md-6">
+            <div class="h-100 p-5 m-4 text-bg-dark rounded-3">
+                <h2>About Me</h2>
+                <p>Hi there! I’m Crystal Paine, (I am currently fostering D and in the process of
+                    adopting him. I’m first and foremost a child of God. I’m passionate about glorifying Him and making
+                    the most of my days on this earth. All I have and all I am is thanks to my Creator and Redeemer.
+                    I’m also a homeschool graduate, sister to six, and daughter of wise parents who modeled being
+                    financially-savvy to me.</p>
+                <button class="btn btn-outline-light" type="button">Read more</button>
+            </div>
+        </div>
+        <!-- explore -->
+        <div class="col-md-6">
+            <div class="h-100 p-5 m-4 bg-light border rounded-3">
+                <h2>Explore The iblog world</h2>
+                <p>Nature, the people, and the smell of a new land screams adventure. The world is humungous, and a
+                    lifetime wouldn’t be enough to explore it. Every city has its specialty, and one can only experience
+                    that by traveling to that city and
+                    experiencing its air. As part of our journey from birth to death, we ought to feel the freedom that
+                    comes with adventures. Exploring quotes and travel quotes have been motivating people for a long
+                    time. </p>
+                <a href="/blog.html"><button class="btn btn-outline-secondary" type="button">Explore</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container 4 signup -->
+    <div class="container col-xl-10 col-xxl-8 px-4 mt-5" id="write">
+        <div class="direction row align-items-center g-lg-5 py-5">
+            <!-- text -->
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 mb-3">Have you got a way with words?</h1>
+                <p class="col-lg-10 fs-4">We’re always looking for passionate writers from a wide range of professional
+                    backgrounds to join our content writing services.</p>
+                <p class="col-lg-10 fs-4">The iblog is one of the highest paid and most flexible freelance writing
+                    platforms on the planet.</p>
+            </div>
+            <!-- form -->
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                    <hr class="my-4">
+                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+
+<!-- footer -->
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <!-- text -->
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">www.ibolg.com © 2022 | All Rights Reserved</span>
+        </div>
+
+        <!-- links -->
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.facebook.com" target="_blank"><img
+                        src="/Images/Footer/fblogo.webp" alt="fblink" class="bi" width="24" height="24"></img></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://www.twitter.com" target="_blank"><img
+                        src="/Images/Footer/twlogo.png" alt="twitter" class="bi" width="24" height="24"></img></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com" target="_blank"><img
+                        src="/Images/Footer/ldlogo.png" alt="linkedin" class="bi" width="24" height="24"></img></a></li>
+            <li class="ms-3"><a class="text-dark bi text-muted" href="#home">Back to Top</a></li>
+        </ul>
+    </footer>
+</div>
+
+</html>
